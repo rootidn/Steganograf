@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="steganograf.Controller">
+    <children>
+        <TabPane styleClass="tab-panes" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab text="Encode Image">
+                    <content>
+                        <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #D6E6F0;">
+                            <items>
+                        <VBox alignment="TOP_CENTER" spacing="12.0" style="-fx-background-color: #F4F4F4;">
+                           <children>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Cover Image" textFill="DIMGRAY" wrapText="false">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" fx:id="x1" />
+                                            </font>
+                                        </Label>
+                              <VBox fx:id="coverImagePane" alignment="CENTER" prefHeight="434.0" prefWidth="423.0" style="-fx-background-color: #E4E2DE;" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets left="12.0" right="12.0" />
+                                 </VBox.margin>
+                                 <children>
+                                              <ImageView fx:id="coverImageView" fitHeight="444.0" fitWidth="422.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#setCoverImage" text="New Image" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets top="12.0" />
+                           </padding>
+                        </VBox>
+                                <AnchorPane prefHeight="518.0" prefWidth="289.0">
+                                    <children>
+                                        <TabPane prefHeight="669.0" prefWidth="286.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                                <Tab fx:id="secretMessageTab" disable="true" text="Hide Message">
+                                                    <content>
+                                          <VBox>
+                                             <children>
+                                                <VBox prefHeight="400.0" prefWidth="428.0" spacing="12.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                                      <Label text="Secret Message" textFill="DIMGRAY">
+                                                                          <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                          </font>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="4.0" top="12.0" />
+                                                         </padding>
+                                                                      </Label>
+                                                                      <TextArea fx:id="secretMessage" prefHeight="266.0" prefWidth="422.0" VBox.vgrow="ALWAYS">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </TextArea>
+                                                      <CheckBox fx:id="compressMessage" layoutX="10.0" layoutY="383.0" mnemonicParsing="false" text="Compress Message">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="encryptMessage" layoutX="10.0" layoutY="379.0" mnemonicParsing="false" onAction="#getEncryptionPassword" text="Encrypt Message">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <HBox fx:id="messagePixelsPerByteWrapper" prefWidth="200.0" spacing="24.0">
+                                                         <children>
+                                                            <Label text="Pixels/Byte">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <RadioButton mnemonicParsing="false" selected="true" text="1">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="messagePixelsPerByte" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton mnemonicParsing="false" text="2" toggleGroup="$messagePixelsPerByte">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="12.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="12.0" right="12.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                                <HBox alignment="CENTER" prefHeight="64.0" prefWidth="446.0">
+                                                   <children>
+                                                                      <Button fx:id="encodeMessage" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#encodeMessageInImage" text="Encode">
+                                                                          <font>
+                                                                              <Font size="16.0" />
+                                                                          </font>
+                                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="secretDocumentTab" disable="true" text="Hide Document">
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <VBox prefHeight="400.0" prefWidth="428.0" spacing="12.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <Label text="Secret Document" textFill="DIMGRAY">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <padding>
+                                                            <Insets bottom="4.0" top="12.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <ListView fx:id="secretDocumentContent" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                                      <CheckBox fx:id="compressDocument" layoutX="10.0" layoutY="420.0" mnemonicParsing="false" text="Compress Document">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="encryptDocument" layoutX="10.0" layoutY="420.0" mnemonicParsing="false" onAction="#getEncryptionPassword" text="Encrypt Document">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <HBox fx:id="documentPixelsPerByteWrapper" prefWidth="200.0" spacing="24.0">
+                                                         <children>
+                                                            <Label text="Pixels/Byte">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <RadioButton mnemonicParsing="false" selected="true" text="1">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="documentPixelsPerByte" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton mnemonicParsing="false" text="2" toggleGroup="$documentPixelsPerByte">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="12.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="12.0" right="12.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                                <HBox alignment="CENTER" prefHeight="64.0" prefWidth="446.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#setSecretDocument" text="Add Document">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="encodeDocument" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#encodeDocumentInImage" text="Encode" HBox.hgrow="ALWAYS">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                                </Tab>
+                                            </tabs>
+                                        </TabPane>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </content>
+                </Tab>
+                <Tab text="Decode Image">
+               <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="456.0" prefWidth="852.0" spacing="24.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER" style="&#10;" text="Steganographic Image" textAlignment="CENTER" textFill="DIMGRAY" wrapText="false">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" fx:id="x11" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="12.0" />
+                                 </padding>
+                              </Label>
+                              <VBox fx:id="steganographicImagePane" alignment="CENTER" style="-fx-background-color: #E4E2DE;" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="12.0" left="24.0" right="24.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fx:id="steganographicImageView" fitHeight="400.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#setSteganographicImage" text="New Image">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="decodeImage" disable="true" mnemonicParsing="false" onAction="#decodeImage" text="Decode">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

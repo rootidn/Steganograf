@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Types/PasswordType.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Resources/stylesheet.css</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Resources/style.css</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/Metadata.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/Utils.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Exceptions/CannotDecodeException.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Modals/PasswordPrompt.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Exceptions/UnsupportedImageTypeException.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/ImageSteganography.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/ZLibCompression.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Modals/AlertBox.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Controller.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/BaseSteganography.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Resources/layout.fxml</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Exceptions/CannotEncodeException.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Steganograf.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Resources/stegano.png</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Types/DataFormat.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/AESEncryption.java</file>
+            <file>file:/D:/UIN/KeamananTI/Tugas2/Steganograf/src/steganograf/Logic/HiddenData.java</file>
+        </group>
+    </open-files>
+</project-private>
